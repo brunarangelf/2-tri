@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Rakkas&display=swap');
+
+/*------------------------------------*\
+  #CONFIGURAÇÕES GLOBAIS
+\*------------------------------------*/
+
+/* Variáveis de Cores e Fontes */
+:root {
+    --primary-color: #023c73;
+    --secondary-color: #3c7ca6;
+    --text-color: #021959;
+    --background-color: #d5f2e8;
+    --button-hover: #012E40;
+    --font-body: "Chocolate Classical Sans", serif;
+    --font-titulo: "Rakkas", serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+/* Estilos Gerais do Corpo da Página */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Estilos de Tipografia Base */
+h1, h2, h3 {
+    font-family: var(--font-titulo);
+    color: var(--primary-color);
+    margin-bottom: 15px; /* Adicionado para espaçamento consistente */
+}
+
+h3 {
+    margin-top: 25px; /* Mantido conforme original se for uma intenção específica */
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 15px; /* Adicionado para espaçamento consistente */
+}
+
+/* Estilos de Imagens */
+img {
+    max-width: 100%; /* Ajuste para 100% para melhor responsividade */
+    height: auto; /* Garante que a proporção da imagem seja mantida */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem se ela for menor que a largura máxima */
+}
+
+
+/*------------------------------------*\
+  #LAYOUT E COMPONENTES PRINCIPAIS
+\*------------------------------------*/
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white; /* Sobrescreve a cor do h1 geral para o header */
+    margin-bottom: 20px;
+}
+
+header img {
+    border-radius: 8px; /* Exemplo de estilo para a imagem do header */
+    margin-bottom: 20px;
+}
+
+header p {
+    margin-bottom: 25px;
+    color: white;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os itens da lista */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Conteúdo Principal (Seções) */
+.conteudo {
+    width: 80%;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos para Artigos dentro das Seções */
+.conteudo article {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee; /* Separador sutil entre artigos */
+}
+
+.conteudo article:last-child {
+    border-bottom: none; /* Remove o separador do último artigo */
+}
+
+/* Estilos para a lista de consequências */
+.conteudo ul {
+    list-style: disc inside; /* Bolinhas dentro do item */
+    margin-left: 20px; /* Indentação para a lista */
+}
+
+.conteudo ul li {
+    margin-bottom: 10px;
+}
+
+/* Botão CTA */
+.cta-button {
+    display: block;
+    width: fit-content; /* Ajusta a largura ao conteúdo */
+    margin: 30px auto 0;
+    padding: 15px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: var(--button-hover);
+}
+
+.cta-button i {
+    margin-left: 8px; /* Espaçamento entre o texto e o ícone */
+}
+
+/* Estilos para a imagem que estava solta */
+.conteudo-imagem {
+    width: 80%;
+    max-width: 960px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.conteudo-imagem img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-imagem figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.cta-footer {
+    display: inline-block; /* Para o padding funcionar corretamente */
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-footer:hover {
+    background-color: var(--button-hover);
+}
+
+
+/*------------------------------------*\
+  #RESPONSIVIDADE
+\*------------------------------------*/
+
+@media (max-width: 768px) {
+    .conteudo, .conteudo-imagem {
+        width: 90%;
+        padding: 20px; /* Ajuste do padding para telas menores */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduz o espaçamento em telas menores */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espaçamento vertical para itens da nav */
+    }
+
+    .cta-button {
+        width: 90%; /* Ajusta a largura para ocupar mais espaço em telas menores */
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em; /* Ajuste para títulos maiores em telas pequenas */
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .conteudo {
+        padding: 15px;
+    }
+
+    .cta-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
